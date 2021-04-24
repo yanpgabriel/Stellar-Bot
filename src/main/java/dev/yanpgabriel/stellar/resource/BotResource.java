@@ -13,9 +13,8 @@ public class BotResource {
     BotService botService;
 
     @GET
-    @Path("token")
-    public String token() {
-        return botService.getJDA().getToken();
+    public String bot() {
+        return botService.getJDA().getSelfUser().getName();
     }
     
 }
