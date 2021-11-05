@@ -21,6 +21,12 @@ pipeline {
           }
         }
 
+        stage('Arquivar .jar') {
+          steps {
+            archiveArtifacts(artifacts: 'target/Stellar-Bot-*.jar', caseSensitive: true)
+          }
+        }
+
       }
     }
 
