@@ -10,8 +10,10 @@ pipeline {
     stage('Build') {
       parallel {
         stage('Iniciar') {
+          agent any
           steps {
             echo 'Iniciando Build'
+            sh 'ls -la'
           }
         }
 
