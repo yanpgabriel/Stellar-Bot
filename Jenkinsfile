@@ -17,8 +17,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('List') {
           steps {
+            sh 'pwd'
             sh 'ls -la'
           }
         }
