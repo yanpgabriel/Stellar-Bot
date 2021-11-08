@@ -21,6 +21,7 @@ pipeline {
           steps {
             sh 'pwd'
             sh 'ls -la'
+            sh 'mkdir /home/teste'
           }
         }
 
