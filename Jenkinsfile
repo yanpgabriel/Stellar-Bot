@@ -1,25 +1,25 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.8.3-openjdk-17'
-      args '-v /home/maven:/root/.m2'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       parallel {
-        stage('Iniciar') {
-          agent any
+        stage('Build') {
+          agent {
+            docker {
+              image 'maven:3.8.3-openjdk-17'
+              args '-v /home/maven:/root/.m2'
+            }
+
+          }
           steps {
             echo 'Iniciando Build'
-            sh 'ls -la'
+            sh 'mvn clean package'
           }
         }
 
-        stage('Criar arquivo .jar') {
+        stage('') {
           steps {
-            sh 'mvn clean package'
+            sh 'ls -la'
           }
         }
 
